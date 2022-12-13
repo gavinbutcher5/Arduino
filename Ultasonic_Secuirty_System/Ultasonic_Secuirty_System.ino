@@ -6,15 +6,12 @@
  * Resource: https://create.arduino.cc/projecthub/Krepak/ultrasonic-security-system-3afe13?ref=search&ref_id=red%20green%20yellow%20light%20echo%20sensor&offset=1
  * 
  */
-
-
-
- #define trigPin 2
-#define echoPin 3
-#define LEDlampRed 4
-#define LEDlampYellow 5
-#define LEDlampGreen 6 
-#define soundbuzzer 7
+int trigPin = 3;
+int echoPin = 4;
+int LEDlampRed 12;
+int LEDlampYellow 11;
+int LEDlampGreen 10;
+int soundbuzzer 5;
 int sound = 500;
 
 
