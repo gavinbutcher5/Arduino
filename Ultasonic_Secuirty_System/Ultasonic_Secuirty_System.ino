@@ -8,9 +8,9 @@
  */
 int trigPin = 3;
 int echoPin = 4;
-int LEDlampRed 12;
-int LEDlampYellow 11;
-int LEDlampGreen 10;
+int LEDlampRed = 12;
+int LEDlampYellow = 11;
+int LEDlampGreen = 10;
 int soundbuzzer = 5;
 int sound = 500;
 
