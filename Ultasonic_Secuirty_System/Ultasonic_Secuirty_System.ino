@@ -12,7 +12,7 @@ int LEDlampRed = 12;
 int LEDlampYellow = 11;
 int LEDlampGreen = 10;
 int soundbuzzer = 5;
-int sound = 500;
+int sound = 6000;
 
 
 void setup() {
@@ -49,7 +49,7 @@ void loop() {
   }
   if (distanceincm < 5) {
     digitalWrite(LEDlampRed, HIGH);
-    sound = 1000;
+    sound = 6000;
 }
   else {
     digitalWrite(LEDlampRed,LOW);
@@ -62,7 +62,7 @@ void loop() {
   else {
     Serial.print(distanceincm);
     Serial.println(" cm");
-    tone(buzzer;, sound);
+    tone(soundbuzzer, sound);
   }
   
   delay(300);
