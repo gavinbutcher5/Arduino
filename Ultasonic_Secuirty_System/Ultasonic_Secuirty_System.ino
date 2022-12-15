@@ -34,35 +34,36 @@ void loop() {
   durationindigit = pulseIn(echoPin, HIGH);
   distanceincm = (durationindigit/5) / 29.1;
  
-  if (distanceincm < 5) {
+  if (distanceincm < 10 && distanceincm>=7 ) {
       digitalWrite(LEDlampGreen, HIGH);
+      Serial.println("Getting close - Proced");
 }
   else {
       digitalWrite(LEDlampGreen, LOW);
   }
   
-  if (distanceincm < 3) {
+  if (distanceincm < 7) {
     digitalWrite(LEDlampYellow, HIGH);
 }
   else {
     digitalWrite(LEDlampYellow,LOW);
   }
-  if (distanceincm < 2) {
+  if (distanceincm < 4) {
     digitalWrite(LEDlampRed, HIGH);
-    sound = 6000;
+    tone(soundbuzzer, sound);
 }
   else {
     digitalWrite(LEDlampRed,LOW);
   }
  
-  if (distanceincm > 5 || distanceincm <= 0){
-    Serial.println("Outside the permissible range of distances");
+  if (distanceincm > 10 || distanceincm <= 0){
+    Serial.println("All Clear - Proced");
     noTone(soundbuzzer);
   }
   else {
     Serial.print(distanceincm);
     Serial.println(" cm");
-    tone(soundbuzzer, sound);
+    
   }
   
   delay(300);
