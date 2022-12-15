@@ -24,6 +24,8 @@ void setup() {
   pinMode(LEDlampGreen, OUTPUT);
   pinMode(soundbuzzer, OUTPUT);
 }
+
+
 void loop() {
   long durationindigit, distanceincm;
   digitalWrite(trigPin, LOW); 
@@ -42,14 +44,15 @@ void loop() {
       digitalWrite(LEDlampGreen, LOW);
   }
   
-  if (distanceincm < 7) {
+  if (distanceincm <=6 && distanceincm>=4 ){
     digitalWrite(LEDlampYellow, HIGH);
 }
   else {
     digitalWrite(LEDlampYellow,LOW);
   }
-  if (distanceincm < 4) {
+  if (distanceincm < 3) {
     digitalWrite(LEDlampRed, HIGH);
+    Serial.println("STOP NOW");
     tone(soundbuzzer, sound);
 }
   else {
@@ -59,12 +62,12 @@ void loop() {
   if (distanceincm > 10 || distanceincm <= 0){
     Serial.println("All Clear - Proced");
     noTone(soundbuzzer);
-  }
+}
   else {
     Serial.print(distanceincm);
     Serial.println(" cm");
     
   }
   
-  delay(300);
+  delay(1000);
 }
